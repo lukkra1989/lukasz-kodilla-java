@@ -30,11 +30,9 @@ public class StreamMain {
         poemBeautifier.beautify("Lithuania ,Motherland Ov Mine !",
                 ((myPoem) -> String.valueOf(myPoem.getBytes())));
 
-
         System.out.println();
         System.out.println("Task 7.3:");
         System.out.println();
-
 
         Map<Integer, ForumUser> collect = Forum.getUserList().stream()
                 .filter(user -> user.getSex() == 'M')
