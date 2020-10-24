@@ -16,6 +16,6 @@ public class Triangle implements Shape {
 
     @Override
     public double getField() {
-        return (a/2 * h);
+        return (a / 2 * h);
     }
 }

@@ -1,4 +1,5 @@
 package com.kodilla.testing.shape;
+
 import java.util.*;
 
 public class ShapeCollector {
