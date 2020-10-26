@@ -10,9 +10,11 @@ public class ShapeCollector {
     public ShapeCollector() {
     }*/
 
-    public boolean addFigure(Shape shape) {
+    public ShapeCollector addFigure(Shape shape) {
+
         shapes.add(shape);
-        return false;
+
+        return null;
     }
 
     public void removeFigure(Shape shape) {

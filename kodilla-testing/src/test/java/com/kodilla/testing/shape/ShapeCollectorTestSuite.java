@@ -14,11 +14,11 @@ public class ShapeCollectorTestSuite {
     @Test
     public void addFigure_returnsTrueWhenAdded() {
         ShapeCollector shapeCollector = new ShapeCollector();
-
-        shapeCollector.addFigure(new Circle(0));
-
-        boolean result = shapeCollector.addFigure(new Circle(0));
-        Assertions.assertFalse(result);
+        //shapeCollector.addFigure(new Circle(0));
+        Circle circle=new Circle(0);
+        ShapeCollector result = shapeCollector.addFigure(new Circle(0));
+        shapeCollector.addFigure(circle);
+        assertEquals(result,shapeCollector.addFigure(new Circle(0)));
     }
 
     @DisplayName("Checking do method contains proper lenght" +
@@ -33,7 +33,6 @@ public class ShapeCollectorTestSuite {
         shapeCollector.addFigure(circle);
         shapeCollector.removeFigure(circle);
         //Then
-        //
         assertEquals(shapeCollector.getShapeCount(), 0);
     }
 
