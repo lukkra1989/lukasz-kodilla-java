@@ -13,12 +13,13 @@ public class ShapeCollectorTestSuite {
             "Then should return True")
     @Test
     public void addFigure_returnsTrueWhenAdded() {
+        //Given
         ShapeCollector shapeCollector = new ShapeCollector();
-        //shapeCollector.addFigure(new Circle(0));
         Circle circle=new Circle(0);
-        ShapeCollector result = shapeCollector.addFigure(new Circle(0));
-        shapeCollector.addFigure(circle);
-        assertEquals(result,shapeCollector.addFigure(new Circle(0)));
+        //When
+        //Then
+        Shape result = shapeCollector.addFigure(circle);
+        assertEquals(result,circle);
     }
 
     @DisplayName("Checking do method contains proper lenght" +

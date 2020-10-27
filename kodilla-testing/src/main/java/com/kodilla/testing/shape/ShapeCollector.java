@@ -5,16 +5,11 @@ import java.util.*;
 public class ShapeCollector {
     private List<Shape> shapes = new ArrayList<>();
 
-   /* public ShapeCollector(Object circle) {
-    }
-    public ShapeCollector() {
-    }*/
-
-    public ShapeCollector addFigure(Shape shape) {
+    public Shape addFigure(Shape shape) {
 
         shapes.add(shape);
 
-        return null;
+        return shape;
     }
 
     public void removeFigure(Shape shape) {
