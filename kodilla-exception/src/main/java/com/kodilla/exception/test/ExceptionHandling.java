@@ -9,6 +9,7 @@ public class ExceptionHandling {
             secondChallenge.probablyIWillThrowException(1.5,2.0);
         }catch (Exception exception){
             throw new Exception();
-        }
+        }finally{
+            System.out.println("Finally Here!");}
     }
 }
