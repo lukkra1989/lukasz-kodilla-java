@@ -154,8 +154,8 @@ class BoardTestSuite {
                 .filter(averageDaysToComplete::contains)
                 .flatMap(a->a.getTasks().stream())
                 .map(b->ChronoUnit.DAYS.between(b.getCreated() , LocalDate.now()))
-                .collect(Collectors.averagingDouble(c->c));
+                .collect(Collectors.averagingDouble(b->b));
         //Then
-        Assert.assertEquals(10,2,10);
+        Assert.assertEquals(0.0,sumOfDays,0.01);
     }
 }
