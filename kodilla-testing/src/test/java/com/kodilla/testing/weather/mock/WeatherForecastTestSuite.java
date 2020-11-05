@@ -13,7 +13,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class WeatherForecastTestSuite1 {
+class WeatherForecastTestSuite1  {
 
    @Mock
    private Temperatures temperaturesMock;

@@ -33,7 +33,8 @@ public class WeatherForecast {
         for (Map.Entry<String, Double> temperature : temperatures.getTemperatures().entrySet()) {
             sum += temperature.getValue();
         }
-        resultMap=sum/ 5;
+        System.out.println(sum);
+        resultMap=sum/ temperatures.size();
 
         return  resultMap;
     }
