@@ -32,6 +32,7 @@ public class ShapeCollector {
         return sj.toString();
     }
 
+
     public int getShapeCount() {
         return shapes.size();
     }

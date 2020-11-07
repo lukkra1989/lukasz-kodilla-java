@@ -41,6 +41,7 @@ class WeatherForecastTestSuite1  {
     @Test
     void  testCalcuateAverageWithMock(){
         //Given
+
         Temperatures temperaturesMock = mock(Temperatures.class);
         Map<String,Double>temperaturesMap=new HashMap<>();
         temperaturesMap.put("Rzeszow",25.5);
@@ -48,7 +49,7 @@ class WeatherForecastTestSuite1  {
         temperaturesMap.put("Wroclaw",24.8);
         temperaturesMap.put("Warszawa",25.2);
         temperaturesMap.put("Gdansk",26.1);
-       when (temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
+        when (temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
         //When
         double average=weatherForecast.calculateAverage();
@@ -66,7 +67,7 @@ class WeatherForecastTestSuite1  {
         temperaturesMap.put("Wroclaw", 24.8);
         temperaturesMap.put("Warszawa", 25.2);
         temperaturesMap.put("Gdansk", 26.1);
-       // when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
+        when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
         //When
         double median=weatherForecast.calculateMedian();
