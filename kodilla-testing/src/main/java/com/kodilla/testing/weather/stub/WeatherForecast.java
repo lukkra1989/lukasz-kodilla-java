@@ -1,7 +1,6 @@
 package com.kodilla.testing.weather.stub;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class WeatherForecast {
@@ -25,40 +24,30 @@ public class WeatherForecast {
     }
 
     public double calculateAverage() {
-
+        //temperatures.getTemperatures().entrySet().size();
         double resultMap;
 
         double sum = 0.0;
 
         for (Map.Entry<String, Double> temperature : temperatures.getTemperatures().entrySet()) {
+
             sum += temperature.getValue();
         }
-        System.out.println(sum);
-        resultMap=sum/ temperatures.size();
 
-        return  resultMap;
+        System.out.println(sum);
+        resultMap = sum / temperatures.getTemperatures().entrySet().size();
+
+        return resultMap;
     }
 
-    public double calculateMedian(){
+    public double calculateMedian() {
 
-        double median;
-
-        for (Map.Entry<String,Double>temperature :temperatures.getTemperatures().entrySet()){
-            temperature.getValue();
-            Collections.sort(temperatures);
+        List<Double> values = new ArrayList<>(temperatures.getTemperatures().values());
+        Collections.sort(values);
+        int size = values.size();
+        if (size % 2 == 0) {
+            return (values.get(size / 2) + values.get(size / 2 - 1)) / 2;
         }
-
-        if(temperatures.size()%2==0){
-            median=(temperatures.size()/2+temperatures.size()/2-1)/2;
-        }else{ median=temperatures.size()/2;
-        }
-
-//        if(temperatures.size()%2!=0){
-//             median=temperatures.get(temperatures.size()/2+temperatures.size()/2+1);
-//          }
-//        else {
-//            median=temperatures.get(temperatures.size()/2-1);
-//        }
-        return median;
+        return values.get(size / 2);
     }
 }

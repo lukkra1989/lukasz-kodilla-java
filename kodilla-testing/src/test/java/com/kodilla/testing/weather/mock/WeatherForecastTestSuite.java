@@ -56,7 +56,6 @@ class WeatherForecastTestSuite1  {
         //Then
         Assertions.assertEquals(25.56,average);
     }
-
     @Test
     void  testCalcuateMedianWithMock() {
         //Given
