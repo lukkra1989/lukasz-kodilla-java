@@ -17,6 +17,7 @@ public class MovieStore {
         avengersTranslations.add("Mściciele");
         avengersTranslations.add("Avengers");
 
+
         List<String>flashTranslations =new ArrayList<>();
         flashTranslations.add("Błyskawica");
         flashTranslations.add("Flash");
