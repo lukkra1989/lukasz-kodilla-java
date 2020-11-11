@@ -4,5 +4,5 @@ package com.kodilla.good.patterns.challenges;
 
 public interface UserRepository {
 
-    User findById(Long id);
+    User findById(User id);
 }
