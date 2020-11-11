@@ -24,5 +24,4 @@ public class ExtraFoodShop implements Producers{
     public String getLocation() {
         return location;
     }
-
 }
