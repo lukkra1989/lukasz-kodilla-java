@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.challenges.soliddry;
 
 public class User {
     Long id;

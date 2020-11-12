@@ -1,10 +1,11 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.challenges.soliddry;
 
 import com.kodilla.good.patterns.challenges.food2door.Producers;
 import com.kodilla.good.patterns.challenges.food2door.Product;
 
-public class OrderRequest {
-
+public class OrderRequest
+{
+//k
     private User user;
     private Product product;
     private Producers producers;
