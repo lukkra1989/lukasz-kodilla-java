@@ -6,7 +6,5 @@ import java.util.Map;
 public class FlightJoiner {
 
     public void findConnection(Flight flight){
-        Map<<FlightProcessor>, Boolean>connection = new HashMap<>();
-        connection.put("flight1", true);
     }
 }

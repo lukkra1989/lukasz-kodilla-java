@@ -7,15 +7,13 @@ public class Flight {
     String transitAirport;
     String arrivalAirport;
 
-    public Flight(String departureAirport, String transitAirport, String arrivalAirport) {
+    public Flight() {
         this.departureAirport = departureAirport;
         this.transitAirport = transitAirport;
         this.arrivalAirport = arrivalAirport;
     }
 
-    public Flight(String flight) {
 
-    }
 
     @Override
     public boolean equals(Object o) {
