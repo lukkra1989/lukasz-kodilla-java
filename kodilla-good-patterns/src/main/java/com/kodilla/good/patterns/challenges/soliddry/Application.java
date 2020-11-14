@@ -5,8 +5,10 @@ public class Application {
 
     public static void main(String[] args) {
 
-        User userS= new User(233l);
-
-        UserRepositoryImpl userRepositoryImpl= new UserRepositoryImpl();
+        SaleRequestRetriever saleRequestRetriever=new SaleRequestRetriever();
+        OrderRequest orderRequest = saleRequestRetriever.retrive();
+        ProductOrderService productOrderService=new ProductOrderService(
+                new MailService(), new SaleServiceImpl(new ItemSaleRepository()), new ItemSaleRepository());
+        productOrderService.process(orderRequest);
     }
 }
