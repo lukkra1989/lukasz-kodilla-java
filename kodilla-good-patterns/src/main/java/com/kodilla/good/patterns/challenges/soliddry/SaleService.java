@@ -5,7 +5,7 @@ import java.util.List;
 public interface SaleService {
     void createSell(User user, Item item);
 
-    void createUserOrder(User user, String name, int quantity);
+    //void createUserOrder(User user, String name, int quantity);
 
-    List<Item> userOrders(User user);
+    //List<Item> userOrders(User user);
 }

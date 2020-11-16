@@ -15,18 +15,18 @@ public class ProductOrderService {
         ;
     }
 
-    public OrderDto process(final OrderRequest orderRequest) {
+    public void process(final OrderRequest orderRequest) {
         saleService.createSell(orderRequest.getUser(), orderRequest.getItem());
         informationService.inform(orderRequest.getUser(), orderRequest.getItem());
-        return new OrderDto(orderRequest.getUser(), true);
+        //return new OrderDto(orderRequest.getUser(), true);
     }
 
-    public void createUserOrder(User user, String name, int quantity) {
-        saleService.createUserOrder(user, name, quantity);
-        informationService.informAboutOrder(user, name, quantity);
-    }
-
-    public List<Item> getUserOrder(User user) {
-        return saleService.userOrders(user);
-    }
+//    public void createUserOrder(User user, String name, int quantity) {
+//        saleService.createUserOrder(user, name, quantity);
+//        informationService.informAboutOrder(user, name, quantity);
+//    }
+//
+//    public List<Item> getUserOrder(User user) {
+//        return saleService.userOrders(user);
+//    }
 }

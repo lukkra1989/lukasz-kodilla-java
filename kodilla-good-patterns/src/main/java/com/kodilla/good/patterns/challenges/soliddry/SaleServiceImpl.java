@@ -14,13 +14,13 @@ public class SaleServiceImpl implements SaleService {
         saleRepository.createSale(user, item);
     }
 
-    @Override
-    public void createUserOrder(User user, String name, int quantity) {
-        saleRepository.createOrder(user, name, quantity);
-    }
+//    @Override
+//    public void createUserOrder(User user, String name, int quantity) {
+//        saleRepository.createOrder(user, name, quantity);
+//    }
 
-    @Override
-    public List<Item> userOrders(User user) {
-        return saleRepository.getUserItems(user);
-    }
+//    @Override
+//    public List<Item> userOrders(User user) {
+//        return saleRepository.getUserItems(user);
+//    }
 }
