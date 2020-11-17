@@ -3,17 +3,13 @@ package com.kodilla.good.patterns.challenges.flights;
 import java.util.Objects;
 
 public class Flight {
-    String departureAirport;
-    String arrivalAirport;
+    private String departureAirport;
+    private String arrivalAirport;
 
-    public Flight() {
+    public Flight(String departureAirport, String arrivalAirport) {
         this.departureAirport = departureAirport;
         this.arrivalAirport = arrivalAirport;
     }
-
-    public Flight(String departureAirport, String arrivalAirport) {
-    }
-
 
     @Override
     public boolean equals(Object o) {
