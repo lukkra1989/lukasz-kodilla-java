@@ -3,10 +3,10 @@ package com.kodilla.spring.forum;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ForumUser implements Name {
-    //String username;
-    @Override
+public class ForumUser {
+    String username = "John Smith";
+
     public String getUsername() {
-        return "John Smith";
+        return username;
     }
 }
