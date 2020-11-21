@@ -1,6 +1,7 @@
 package com.kodilla.good.patterns.challenges.flights;
 
 import java.util.Set;
+import java.util.StringJoiner;
 import java.util.stream.Collectors;
 
 public class FlightFinder {
@@ -11,8 +12,6 @@ public class FlightFinder {
     public FlightFinder(Set<Flight> flights) {
         this.flights = flights;
     }
-
-
     // String start = flightProvider.getConnections().stream()
 
     public String flightFrom(String departureAirport) {
@@ -33,10 +32,25 @@ public class FlightFinder {
     }
 
     public String flightVia(String transitAirport) {
-        String transit = flights.stream()
-                .filter(entry -> entry.getDepartureAirport().equals(transitAirport))
-                .map(Flight::getArrivalAirport)
-                .collect(Collectors.joining(","));
-        return transit;
+        StringJoiner stringJoiner=new StringJoiner(",");
+            for(Flight flight :flights){
+                for(Flight flight1:flights){
+                    if(!flight.equals(flight1)){
+                        if(flight.getDepartureAirport().equals(transitAirport)&&
+                                flight1.getArrivalAirport().equals(transitAirport))
+                       stringJoiner.add("Flight from: "+ flight.getArrivalAirport() + " via " +
+                                transitAirport + " to: "+ flight1.getDepartureAirport());
+
+                    }
+                }
+            }
+
+//        String transit = flights.stream()
+//                .filter(entry -> entry.getDepartureAirport().equals(transitAirport))
+//                .map(Flight::getArrivalAirport)
+//                .collect(Collectors.joining(","));
+//        return transit;
+        return stringJoiner.toString();
     }
+
 }
