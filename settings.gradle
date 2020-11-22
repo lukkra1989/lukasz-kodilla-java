@@ -10,4 +10,6 @@ include 'kodilla-ticTacToe'
 include 'circle&cross'
 include 'kodilla-spring-intro'
 include 'kodilla-spring'
+include 'kodilla-spring-web'
+include 'kodilla-patterns'
 

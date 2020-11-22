@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class LoggerTestSuite {
+
     @Test
     void shouldGetLastLog(){
         Logger logger=Logger.getInstance();
