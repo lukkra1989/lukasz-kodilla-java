@@ -9,7 +9,7 @@ public class Calculator {
     private Display display;
 
     @Autowired
-    public void calculatorDisplay(Display display) {
+    public Calculator(final Display display) {
         this.display = display;
     }
 

@@ -16,8 +16,6 @@ public class CalculatorTestSuite {
 
     @Test
     void testCalculations() {
-        ApplicationContext context=
-                new AnnotationConfigApplicationContext("com.kodilla.sprinh");
 
         assertEquals(6.0,calculator.add(3.0,3.0));
         assertEquals(0.0,calculator.sub(3.0,3.0));
