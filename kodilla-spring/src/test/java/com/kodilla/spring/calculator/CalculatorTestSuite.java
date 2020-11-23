@@ -9,6 +9,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
+
 public class CalculatorTestSuite {
 
     @Autowired

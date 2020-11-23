@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Scope("prototype")
+
 public class Display {
 
     public void displayValue(double val) {
