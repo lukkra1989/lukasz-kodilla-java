@@ -12,16 +12,17 @@ public class FlightProvider {
     //public static final getConnections()
 
     public Set<Flight> provide() {
-      final   Set<Flight> flights = new HashSet<>();
+        final Set<Flight> flights = new HashSet<>();
 
         flights.add(new Flight("Warsaw", "Berlin"));
         flights.add(new Flight("Krakow", "London"));
         flights.add(new Flight("Sydney", "Moscow"));
+        flights.add(new Flight("Berlin", "Madrid"));
         flights.add(new Flight("Madrid", "Miami"));
         flights.add(new Flight("Kiev", "Phnom Penh"));
-        flights.add(new Flight("London","Moscow"));
+        flights.add(new Flight("London", "Moscow"));
 
-        return  flights;
+        return flights;
     }
 }
 

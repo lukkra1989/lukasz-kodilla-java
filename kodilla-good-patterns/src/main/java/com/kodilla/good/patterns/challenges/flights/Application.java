@@ -5,6 +5,11 @@ public class Application {
         FlightProvider flightProvider = new FlightProvider();
         FlightFinder flightFinder = new FlightFinder(flightProvider.provide());
 
-        System.out.println(flightFinder.flightVia("London"));
+        flightFinder.flightFrom("Warsaw");
+        flightFinder.flightVia("Berlin");
+        flightFinder.flightTo("Moscow");
+
+       System.out.println(flightFinder.flightVia("London"));
+        System.out.println(flightFinder.flightVia("Berlin"));
     }
 }
