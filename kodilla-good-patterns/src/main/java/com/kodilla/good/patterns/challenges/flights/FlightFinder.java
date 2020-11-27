@@ -38,8 +38,8 @@ public class FlightFinder {
                     if(!flightArrival.equals(flightDeparture)){
                         if(flightArrival.getArrivalAirport().equals(transitAirport)&&
                                 flightDeparture.getDepartureAirport().equals(transitAirport))
-                       stringJoiner.add("Flight from: "+ flightDeparture.getArrivalAirport() + " via " +
-                                transitAirport + " to: "+ flightArrival.getDepartureAirport());
+                       stringJoiner.add("Flight from: "+flightArrival.getDepartureAirport()  + " via " +
+                                transitAirport + " to: "+ flightDeparture.getArrivalAirport());
 
                     }
                 }
