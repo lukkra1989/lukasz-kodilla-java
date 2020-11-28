@@ -16,31 +16,31 @@ public class TaskFactoryTestSuite {
         shoppingTask.executeTask();
         //Then
         assertEquals("Shopping", shoppingTask.getTaskName());
-        assertEquals(false, shoppingTask.isTaskExecuted());
-       assertEquals(shoppingTask.executeTask());
+        //assertEquals(false,shoppingTask.isTaskExecuted());
+        assertTrue(shoppingTask.isTaskExecuted());
     }
 
     @Test
-    void testPaintingTask(){
+    void testPaintingTask() {
         //Given
-        TaskFactory taskFactory=new TaskFactory();
+        TaskFactory taskFactory = new TaskFactory();
         //When
-        Task paintingTask= taskFactory.makeTask(TaskFactory.PAINTING);
+        Task paintingTask = taskFactory.makeTask(TaskFactory.PAINTING);
         //Then
-        assertEquals("Painting",paintingTask.getTaskName());
-        assertEquals(false,paintingTask.isTaskExecuted());
-        //assertEquals(,paintingTask.executeTask());
+        assertEquals("Painting", paintingTask.getTaskName());
+        //assertEquals(false,paintingTask.isTaskExecuted());
+        assertTrue(paintingTask.isTaskExecuted());
     }
 
     @Test
-    void testDrivingTask(){
+    void testDrivingTask() {
         //Given
-        TaskFactory taskFactory=new TaskFactory();
+        TaskFactory taskFactory = new TaskFactory();
         //When
-        Task drivingTask=taskFactory.makeTask(TaskFactory.DRIVING);
+        Task drivingTask = taskFactory.makeTask(TaskFactory.DRIVING);
         //Then
-        assertEquals("DriveThru",drivingTask.getTaskName());
-        assertEquals(false,drivingTask.isTaskExecuted());
-        //assertEquals(0,drivingTask.executeTask());
+        assertEquals("DriveThru", drivingTask.getTaskName());
+        //assertEquals(false,drivingTask.isTaskExecuted());
+        assertTrue(drivingTask.isTaskExecuted());
     }
 }
