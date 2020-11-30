@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LibraryTestSuite {
     @Test
-    void testGetBooks() {
+    void testGetBooks() throws CloneNotSupportedException {
 
         //Given
         Library myLibrary = new Library("Fantasy");
@@ -21,19 +21,11 @@ public class LibraryTestSuite {
 
         //making a shallow copy
         Library clonedLibrary = null;
-        try {
-            clonedLibrary = myLibrary.shallowCopy();
-        } catch (CloneNotSupportedException e) {
-            System.out.println(e);
-        }
+        clonedLibrary = myLibrary.shallowCopy();
 
         //making a deep copy
         Library deepClonedLibrary = null;
-        try {
-            deepClonedLibrary = myLibrary.deepCopy();
-        } catch (CloneNotSupportedException e) {
-            System.out.println(e);
-        }
+        deepClonedLibrary = myLibrary.deepCopy();
 
         //When&Then
         assertEquals(clonedLibrary, myLibrary);
