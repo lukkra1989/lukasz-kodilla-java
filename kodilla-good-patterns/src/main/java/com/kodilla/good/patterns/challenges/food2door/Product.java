@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges.food2door2;
+package com.kodilla.good.patterns.challenges.food2door;
 
 public class Product {
     String name;
@@ -17,22 +17,6 @@ public class Product {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 
 

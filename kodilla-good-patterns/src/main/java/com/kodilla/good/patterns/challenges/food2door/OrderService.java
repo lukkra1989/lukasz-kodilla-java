@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges.food2door2;
+package com.kodilla.good.patterns.challenges.food2door;
 
 import java.util.HashMap;
 import java.util.List;
@@ -12,9 +12,13 @@ public class OrderService {
         producerMap.put("GlutenFreeShop",new GlutenFreeShop());
         producerMap.put("HealthyShop",new HealthyShop());
     }
-    void orderFromShop(String shopName, List<Product>products){
+    void orderFromShop(String shopName, List<Product>products) throws ShopNotFoundException{
         System.out.println("Start Ordering Products");
         producerMap.get(shopName).process(products);
         System.out.println("Finishing Ordering Products");
+
+        if(products.contains(producerMap)){
+            throw new ShopNotFoundException();
+        }
     }
 }
