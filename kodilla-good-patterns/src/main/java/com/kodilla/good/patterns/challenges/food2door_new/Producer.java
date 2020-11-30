@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges.food2door;
+package com.kodilla.good.patterns.challenges.food2door_new;
 
 import java.util.List;
 
