@@ -8,6 +8,7 @@ Application {
     public static void main(String[] args) throws ShopNotFoundException {
 
         OrderService orderService = new OrderService();
+
         orderService.checkingProducerMap();
 
             orderService.orderFromShop("ExtraFoodShop", Arrays.asList(new Product("Chocolate", 5, 10)));

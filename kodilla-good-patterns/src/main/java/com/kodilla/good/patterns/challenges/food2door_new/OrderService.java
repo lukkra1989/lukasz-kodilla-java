@@ -21,6 +21,7 @@ public class OrderService {
         }
         if (!producerMap.containsKey((healthyShop))) {
             throw new ShopNotFoundException();
+
         }
     }
 
