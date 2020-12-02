@@ -1,0 +1,105 @@
+CREATE TABLE ISSUESLISTS
+(
+	ID SERIAL  PRIMARY KEY,
+    NAME VARCHAR (30) 
+);
+
+CREATE TABLE ISSUES
+(
+	ID SERIAL PRIMARY KEY,
+    ISSUESLIST_ID BIGINT UNSIGNED NOT NULL,
+    SUMMARY VARCHAR(30),
+    DESCRIPTION VARCHAR (1024),
+    USER_ID_ASSIGNEDTO BIGINT UNSIGNED NOT NULL,
+    FOREIGN KEY (ISSUESLIST_ID) REFERENCES ISSUESLISTS(ID), 
+    FOREIGN KEY (USER_ID_ASSIGNEDTO) REFERENCES USERS(ID) 
+);
+
+INSERT INTO ISSUESLISTS (NAME)
+VALUES ("ToDo");
+
+commit;
+
+INSERT INTO ISSUESLISTS (NAME)
+VALUES ("In progress");
+commit;
+
+INSERT INTO ISSUESLISTS (NAME)
+VALUES ("Done");
+commit;
+
+insert into ISSUESLISTS ( ID ,NAME)
+values(1, "sending an emails");
+commit;
+
+INSERT INTO issues(ISSUESLIST_ID,SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values ( 1,"Sending an emails", "very well", 1 );
+commit;
+
+INSERT INTO issues(ISSUESLIST_ID,SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values ( 1,"Writing notes", "Not so good", 1 );
+commit;
+
+INSERT INTO issues(ISSUESLIST_ID,SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values ( 1,"Speaking on random topics", "good", 1 );
+commit;
+
+INSERT INTO issues(ISSUESLIST_ID,SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values ( 1,"Packing your desk", "very well", 1 );
+commit;
+
+INSERT INTO issues(ISSUESLIST_ID,SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values ( 1,"Writing a CV", "very well", 1 );
+commit;
+
+INSERT INTO issues(ISSUESLIST_ID,SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values ( 2,"Seek", "Searching a good place on holiday", 1 );
+commit;
+
+INSERT INTO issues(ISSUESLIST_ID,SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values ( 2,"Book", "Booking the flight", 1 );
+commit;
+
+INSERT INTO issues(ISSUESLIST_ID,SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values ( 2,"Bagage", "Packing Yourself", 1 );
+commit;
+
+INSERT INTO issues(ISSUESLIST_ID,SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values ( 2,"Flight", "Driving to airport", 1 );
+commit;
+
+INSERT INTO issues(ISSUESLIST_ID,SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+values ( 2,"Fun", "Enjoy Yorself !", 1 );
+commit;
+
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (3, "Team", "Collecting members of the crew", 1);
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (3, "Blueprint", "Achieve a map of tha bank", 1);
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (3, "Agenda", "Giving task all of crew", 1);
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (3, "Heist", "Rob the bank", 1);
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNEDTO)
+VALUES (3, "GetAway", "Loosing the police", 1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
