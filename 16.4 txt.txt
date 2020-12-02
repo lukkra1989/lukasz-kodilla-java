@@ -1,0 +1,10 @@
+select isl.name , i.issueslist_id
+from issues i
+join issueslists isl on  i.issueslist_id= isl.name ;
+
+select i.issueslist_id, u. id
+from issues i
+join  users u on i.ISSUESLIST_ID=u.id;
+
+select u .firstname, u.lastname,count(*), i.USER_ID_ASSIGNEDTO 
+from users u join issues i on u.id= i.USER_ID_ASSIGNEDTO;
