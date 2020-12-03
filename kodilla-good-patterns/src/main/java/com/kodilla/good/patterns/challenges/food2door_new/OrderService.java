@@ -6,28 +6,20 @@ import java.util.Map;
 
 public class OrderService {
 
-        final Map<String, Producer> producerMap = new HashMap<>();
-        {
-            producerMap.put("ExtraFoodShop", new ExtraFoodShop());
-            producerMap.put("GlutenFreeShop", new GlutenFreeShop());
-            producerMap.put("HealthyShop", new HealthyShop());
-        }
+    final Map<String, Producer> producerMap = new HashMap<>();
 
-    void checkingProducerMap()throws ShopNotFoundException{
-        if (!producerMap.containsKey(("ExtraFoodShop"))) {
-            throw new ShopNotFoundException();
-        }
-        if (!producerMap.containsKey(("GlutenFreeShop"))) {
-            throw new ShopNotFoundException();
-        }
-        if (!producerMap.containsKey(("HealthyShop"))) {
-            throw new ShopNotFoundException();
-        }
+    {
+        producerMap.put("ExtraFoodShop", new ExtraFoodShop());
+        producerMap.put("GlutenFreeShop", new GlutenFreeShop());
+        producerMap.put("HealthyShop", new HealthyShop());
     }
 
-    void orderFromShop(String shopName, List<Product> products) {
+    void orderFromShop(String shopName, List<Product> products) throws ShopNotFoundException {
         System.out.println("Start Ordering Products");
         producerMap.get(shopName).process(products);
         System.out.println("Finishing Ordering Products");
+        if (!producerMap.containsKey(shopName)) {
+            throw new ShopNotFoundException();
+        }
     }
 }
