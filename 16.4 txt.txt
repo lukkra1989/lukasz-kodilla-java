@@ -7,4 +7,5 @@ from issues i
 join  users u on i.ISSUESLIST_ID=u.id;
 
 select u .firstname, u.lastname,count(*), i.USER_ID_ASSIGNEDTO 
-from users u join issues i on u.id= i.USER_ID_ASSIGNEDTO;
+from users u join issues i on u.id= i.USER_ID_ASSIGNEDTO
+group by u.firstname,u.lastname;
