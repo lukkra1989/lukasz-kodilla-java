@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 public class OrderService {
+
         final Map<String, Producer> producerMap = new HashMap<>();
         {
             producerMap.put("ExtraFoodShop", new ExtraFoodShop());
@@ -12,16 +13,15 @@ public class OrderService {
             producerMap.put("HealthyShop", new HealthyShop());
         }
 
-    void checkingProducerMap(ExtraFoodShop extraFoodShop, GlutenFreeShop glutenFreeShop, HealthyShop healthyShop)throws ShopNotFoundException{
-        if (!producerMap.containsKey((extraFoodShop))) {
+    void checkingProducerMap()throws ShopNotFoundException{
+        if (!producerMap.containsKey(("ExtraFoodShop"))) {
             throw new ShopNotFoundException();
         }
-        if (!producerMap.containsKey((glutenFreeShop))) {
+        if (!producerMap.containsKey(("GlutenFreeShop"))) {
             throw new ShopNotFoundException();
         }
-        if (!producerMap.containsKey((healthyShop))) {
+        if (!producerMap.containsKey(("HealthyShop"))) {
             throw new ShopNotFoundException();
-
         }
     }
 
