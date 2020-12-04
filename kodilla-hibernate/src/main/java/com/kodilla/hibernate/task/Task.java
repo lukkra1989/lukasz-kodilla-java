@@ -2,10 +2,12 @@ package com.kodilla.hibernate.task;
 //import javax.persistence.*;
 //import javax.validation.constraints.NotNull;
 //import java.util.Date;
-import javax.validation.constraints.*;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
+@Access(AccessType.PROPERTY)
 @Entity
 @Table(name = "TASKS")
 public final class Task {
@@ -38,12 +40,12 @@ public final class Task {
     }
 
     @NotNull
-    @Column(name="CREATED")
+    @Column(name = "CREATED")
     public Date getCreated() {
         return created;
     }
 
-    @Column(name="DURATION")
+    @Column(name = "DURATION")
     public int getDuration() {
         return duration;
     }
