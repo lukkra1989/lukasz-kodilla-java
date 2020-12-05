@@ -2,6 +2,7 @@ package com.kodilla.hibernate.task.dao;
 
 import com.kodilla.hibernate.task.Task;
 import com.kodilla.hibernate.task.TaskFinancialDetails;
+import com.kodilla.hibernate.task.TaskList;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -78,9 +79,9 @@ public class TaskDaoTestSuite {
         TaskFinancialDetails tfd2 = new TaskFinancialDetails(new BigDecimal(10),false);
         task.setTaskFinancialDetails(tfd);
         task2.setTaskFinancialDetails(tfd2);
-        TaskList taskList=new TaskList(LISTNAME,"ToDo tasks");
+        TaskList taskList=new TaskList("LISTNAME","ToDo tasks");
         taskList.getTasks().add(task);
-        taskList.getTasks().add(task2);
+        task.setTaskList(taskList);
         task.setTaskList(taskList);
         task2.setTaskList(taskList);
         //When
