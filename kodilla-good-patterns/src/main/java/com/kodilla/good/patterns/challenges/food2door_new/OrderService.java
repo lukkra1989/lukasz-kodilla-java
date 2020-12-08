@@ -15,11 +15,13 @@ public class OrderService {
     }
 
     void orderFromShop(String shopName, List<Product> products) throws ShopNotFoundException {
+
+        if (!producerMap.containsKey(shopName))
+            throw new ShopNotFoundException();
+
         System.out.println("Start Ordering Products");
         producerMap.get(shopName).process(products);
         System.out.println("Finishing Ordering Products");
-        if (!producerMap.containsKey(shopName)) {
-            throw new ShopNotFoundException();
-        }
+
     }
 }
