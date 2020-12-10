@@ -5,20 +5,18 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.hibernate.loader.Loader.SELECT;
-
 @NamedNativeQuery(
-        name="Company.retrieveNameWhichThreeLettersEquals",
-        query = "SELECT * FROM COMPANIES"+
-        "WHERE SUBSTRING(COMPANY_NAME,1,3)==COMPANY_NAME" ,
-        resultClass=Company.class
+        name = "Company.retrieveNameWhichThreeLettersEquals",
+        query = "SELECT * FROM COMPANIES" +
+                "WHERE SUBSTRING(COMPANY_NAME,1,3)==COMPANY_NAME",
+        resultClass = Company.class
 )
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
     private int id;
     private String name;
-    private List<Employee> employees=new ArrayList<>();
+    private List<Employee> employees = new ArrayList<>();
 
 
     public Company() {
@@ -50,7 +48,7 @@ public class Company {
         this.name = name;
     }
 
-    @ManyToMany(cascade = CascadeType.ALL,mappedBy = "companies")
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "companies")
     public List<Employee> getEmployees() {
         return employees;
     }

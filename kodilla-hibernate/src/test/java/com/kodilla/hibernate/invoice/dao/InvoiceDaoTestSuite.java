@@ -50,13 +50,5 @@ public class InvoiceDaoTestSuite {
         }catch (Exception e){
             //do nothing
         }
-
-
-
-
-//
-//        invoiceDao.deleteById(id);
-//        invoiceDao.deleteById(id2);
-
     }
 }
