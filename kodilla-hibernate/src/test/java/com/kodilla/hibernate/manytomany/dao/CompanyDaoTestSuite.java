@@ -3,14 +3,17 @@ package com.kodilla.hibernate.manytomany.dao;
 import com.kodilla.hibernate.manytomany.Company;
 import com.kodilla.hibernate.manytomany.Employee;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
+@RunWith(SpringRunner.class)
 @SpringBootTest
 class CompanyDaoTestSuite {
 
@@ -18,7 +21,6 @@ class CompanyDaoTestSuite {
     private CompanyDao companyDao;
     @Autowired
     private EmployeeDao employeeDao;
-
 
     @Test
     void testSaveManyToMany() {
@@ -86,20 +88,21 @@ class CompanyDaoTestSuite {
         companyDao.save(greyMatter);
 
         //When
-        List<Employee> myLastname = employeeDao.retrieveLastname("Smi");
+        //int nameID=johnSmith.getId();
+        List<Employee> myLastName = employeeDao.retrieveLastname("Smith");
         List<Company> prefixCompany = companyDao.retrieveNameWhichThreeLettersEquals("Sof");
 
-        //Then
-        assertEquals(1, myLastname);
-        assertEquals(1, prefixCompany);
+        //The
+        assertEquals(1, myLastName.size());
+        assertEquals(1, prefixCompany.size());
 
         //CleanUp
-        try {
-            companyDao.deleteById(softwareMachine.getId());
-            companyDao.deleteById(dataMaesters.getId());
-            companyDao.deleteById(greyMatter.getId());
-        } catch (Exception e) {
-            //do nothing
-        }
+        employeeDao.delete(johnSmith);
+        employeeDao.delete(stephanieClarckson);
+        employeeDao.delete(lindaKovalsky);
+
+        companyDao.deleteById(softwareMachine.getId());
+        companyDao.deleteById(dataMaesters.getId());
+        companyDao.deleteById(greyMatter.getId());
     }
 }
