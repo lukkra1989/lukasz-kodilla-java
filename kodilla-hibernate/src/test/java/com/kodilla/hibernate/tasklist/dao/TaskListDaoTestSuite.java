@@ -3,6 +3,8 @@ package com.kodilla.hibernate.tasklist.dao;
 import com.kodilla.hibernate.task.Task;
 import com.kodilla.hibernate.task.TaskFinancialDetails;
 import com.kodilla.hibernate.task.TaskList;
+import com.kodilla.hibernate.task.dao.TaskDao;
+import com.kodilla.hibernate.task.dao.TaskListDao;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,24 +20,28 @@ public class TaskListDaoTestSuite {
 
     @Autowired
     private TaskListDao taskListDao;
+
     @Autowired
-    private String LISTNAME;
+    private TaskDao taskDao;
 
-    @Test
-    void testFindByListName() {
-        //Given
-        TaskList taskList = new TaskList("name", "name");
-        taskListDao.save(taskList);
-        String name = taskList.getListName();
-        //When
-        List<TaskList> findTask = taskListDao.findByListName(name);
+    private String LISTNAME="Listname";
+    private String TODO="ToDo";
 
-        //Then
-        assertEquals(findTask.size(), 1);
-
-        //CleanUp
-        taskListDao.deleteById(taskList.getId());
-    }
+//    @Test
+//    void testFindByListName() {
+//        //Given
+//        TaskList taskList = new TaskList("name", "name");
+//        taskListDao.save(taskList);
+//        String name = taskList.getListName();
+//        //When
+//        List<TaskList> findTask = taskListDao.findByListName(name);
+//
+//        //Then
+//        assertEquals(findTask.size(), 1);
+//
+//        //CleanUp
+//        taskListDao.deleteById(taskList.getId());
+//    }
 
     @Test
     void testTaskListDaoSaveWithTasks() {
