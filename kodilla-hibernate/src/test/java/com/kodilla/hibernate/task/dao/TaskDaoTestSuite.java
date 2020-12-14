@@ -86,12 +86,12 @@ public class TaskDaoTestSuite {
     }
 
     @Test
-    public void testNamedQueries(){
+    public void testNamedQueries() {
         //Given
         Task task1 = new Task("Test: Study Hibernate", 3);
         Task task2 = new Task("Test: Practice Named Queries", 6);
         Task task3 = new Task("Test: Study native queries", 7);
-        Task task4 = new Task("Test: Makes some tests", 13);
+        Task task4 = new Task("Test: Makse some tests", 13);
 
         TaskFinancialDetails tfd1 = new TaskFinancialDetails(new BigDecimal(5), false);
         TaskFinancialDetails tfd2 = new TaskFinancialDetails(new BigDecimal(10), false);
@@ -109,27 +109,31 @@ public class TaskDaoTestSuite {
         taskList.getTasks().add(task3);
         taskList.getTasks().add(task4);
 
+        task1.setTaskList(taskList);
+        task2.setTaskList(taskList);
+        task3.setTaskList(taskList);
+        task4.setTaskList(taskList);
 
         taskListDao.save(taskList);
-       int id= taskList.getId();
+        int id = taskList.getId();
+
         //When
         List<Task> longTasks = taskDao.retrieveLongTasks();
         List<Task> shortTasks = taskDao.retrieveShortTasks();
         List<Task> enoughTimeTasks = taskDao.retrieveTasksWithEnoughTime();
-        List<Task> durationLongerThanTasks= taskDao.retrieveTasksWitDurationLongerThan(6);
+        List<Task> durationLongerThanTasks=taskDao.retrieveTasksWitDurationLongerThan(6);
+
         //Then
         try {
-            assertEquals(1, longTasks.size());
-            assertEquals(23, shortTasks.size());
-            assertEquals(1, enoughTimeTasks.size());
-            assertEquals(1,durationLongerThanTasks.size());
+            assertEquals(29, longTasks.size());
+            assertEquals(106, shortTasks.size());
+            assertEquals(48, enoughTimeTasks.size());
+            assertEquals(80, durationLongerThanTasks.size());
         } finally {
             //CleanUp
             taskListDao.deleteById(id);
         }
     }
-
-
 }
 
 

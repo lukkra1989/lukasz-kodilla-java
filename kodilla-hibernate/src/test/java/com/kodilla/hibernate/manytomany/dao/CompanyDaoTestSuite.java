@@ -75,26 +75,17 @@ class CompanyDaoTestSuite {
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
         Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
 
-        employeeDao.save(johnSmith);
-        employeeDao.save(stephanieClarckson);
-        employeeDao.save(lindaKovalsky);
-
         Company softwareMachine = new Company("Software Machine");
         Company dataMaesters = new Company("Data Maesters");
         Company greyMatter = new Company("Grey Matter");
 
-        companyDao.save(softwareMachine);
-        companyDao.save(dataMaesters);
-        companyDao.save(greyMatter);
-
         //When
-        //int nameID=johnSmith.getId();
-        List<Employee> myLastName = employeeDao.retrieveLastname("Smith");
-        List<Company> prefixCompany = companyDao.retrieveNameWhichThreeLettersEquals("Sof");
+        List<Employee> myLastName = employeeDao.retrieveLastname(johnSmith.getLastname());
+        List<Company> prefixCompany = companyDao.retrieveNameWhichThreeLettersEquals(softwareMachine.getName());
 
         //The
-        assertEquals(1, myLastName.size());
-        assertEquals(1, prefixCompany.size());
+        assertEquals("Smith", myLastName);
+        assertEquals("Sof", prefixCompany);
 
         //CleanUp
         employeeDao.delete(johnSmith);
