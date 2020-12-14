@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -43,8 +44,8 @@ public class TaskDaoTestSuite {
         int id = task.getId();
         Optional<Task> readTask = taskDao.findById(id);
         Assert.assertEquals(id, readTask.isPresent());
-//        Optional<Task> readTask = taskDao.findById(id);
-//        assertTrue(readTask.isPresent());
+        //Optional<Task> readTask = taskDao.findById(id);
+        assertTrue(readTask.isPresent());
 
         //CleanUp
         taskDao.deleteById(id);
@@ -118,10 +119,10 @@ public class TaskDaoTestSuite {
         List<Task> durationLongerThanTasks= taskDao.retrieveTasksWitDurationLongerThan(6);
         //Then
         try {
-            assertEquals(18, longTasks.size());
-            assertEquals(60, shortTasks.size());
-            assertEquals(3, enoughTimeTasks.size());
-            assertEquals(2,durationLongerThanTasks.size());
+            assertEquals(1, longTasks.size());
+            assertEquals(23, shortTasks.size());
+            assertEquals(1, enoughTimeTasks.size());
+            assertEquals(1,durationLongerThanTasks.size());
         } finally {
             //CleanUp
             taskListDao.deleteById(id);

@@ -54,6 +54,16 @@ public class Product {
     public void setItems(List<Item> items) {
         this.items = items;
     }
+
+    //    @ManyToOne
+//    @JoinColumn(name="ID")
+//    public Item getItems() {
+//        return new List<Item>items;
+//    }
+
+//    public void setItems () {
+//        this.items = items;
+//    }
 }
 
 

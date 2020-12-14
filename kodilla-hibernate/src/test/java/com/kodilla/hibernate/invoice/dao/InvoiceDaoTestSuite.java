@@ -10,6 +10,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Iterator;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @SpringBootTest
 public class InvoiceDaoTestSuite {
 
@@ -25,6 +27,9 @@ public class InvoiceDaoTestSuite {
         Item item1=new Item();
         Item item2=new Item();
 
+        product1.getItems().add(item1);
+        product2.getItems().add(item2);
+
         Invoice invoice1=new Invoice("One");
         invoice1.getItems().add(item1);
 
@@ -32,7 +37,6 @@ public class InvoiceDaoTestSuite {
         invoice2.getItems().add(item2);
 
         //When
-       // invoiceDao.save();
         invoiceDao.save(invoice1);
         invoiceDao.save(invoice2);
 
@@ -42,6 +46,9 @@ public class InvoiceDaoTestSuite {
         //Then
         Assert.assertNotEquals(0,id);
         Assert.assertNotEquals(0,id2);
+
+        assertEquals(invoice1.getId(),id);
+        assertEquals(invoice2.getId(),id2);
 
         //CleanUp
         try{
