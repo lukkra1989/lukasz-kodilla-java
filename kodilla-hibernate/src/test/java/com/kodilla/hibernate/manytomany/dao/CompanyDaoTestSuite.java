@@ -7,9 +7,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
+import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
@@ -18,9 +17,12 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 class CompanyDaoTestSuite {
 
     @Autowired
-    private CompanyDao companyDao;
+     CompanyDao companyDao;
     @Autowired
-    private EmployeeDao employeeDao;
+    EmployeeDao employeeDao;
+
+    String LASTNAME="Smith";
+    String PREFIX="Sof";
 
     @Test
     void testSaveManyToMany() {
@@ -68,30 +70,49 @@ class CompanyDaoTestSuite {
         }
     }
 
+
+    @Transactional
     @Test
-    void testRetrievingNames() {
+    void testEmployeeNameRetrieve() {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
         Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
 
+        //When
+        employeeDao.save(johnSmith);
+        List<Employee> myLastName = employeeDao.retrieveLastname(LASTNAME);
+
+        //Then
+        //assertEquals("Smith", myLastName.get());
+        assertEquals("Smith", myLastName.get(0).getLastname());
+
+        //CleanUp
+        employeeDao.delete(johnSmith);
+    }
+
+
+    @Test
+    void testRetrievingCompanyNames() {
+        //Given
         Company softwareMachine = new Company("Software Machine");
         Company dataMaesters = new Company("Data Maesters");
         Company greyMatter = new Company("Grey Matter");
 
         //When
-        List<Employee> myLastName = employeeDao.retrieveLastname(johnSmith.getLastname());
-        List<Company> prefixCompany = companyDao.retrieveNameWhichThreeLettersEquals(softwareMachine.getName());
+        companyDao.save(softwareMachine);
+        companyDao.save(dataMaesters);
+        companyDao.save(greyMatter);
+
+        int id=softwareMachine.getId();
+
+        List<Company> prefixCompanySof = companyDao.retrieveNameWhichThreeLettersEquals(PREFIX);
 
         //The
-        assertEquals("Smith", myLastName);
-        assertEquals("Sof", prefixCompany);
+        assertEquals("Sof", prefixCompanySof.size());
+        assertEquals("Sof", prefixCompanySof.get(0).getName());
 
         //CleanUp
-        employeeDao.delete(johnSmith);
-        employeeDao.delete(stephanieClarckson);
-        employeeDao.delete(lindaKovalsky);
-
         companyDao.deleteById(softwareMachine.getId());
         companyDao.deleteById(dataMaesters.getId());
         companyDao.deleteById(greyMatter.getId());

@@ -13,5 +13,5 @@ import java.util.List;
 public interface CompanyDao extends CrudRepository<Company, Integer> {
 
     @Query(nativeQuery = true)
-    List<Company> retrieveNameWhichThreeLettersEquals(String prefix);
+    List<Company> retrieveNameWhichThreeLettersEquals(String PREFIX);
 }
