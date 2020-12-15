@@ -5,15 +5,7 @@ import com.sun.istack.NotNull;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-//@NamedQuery(
-//        name = "Task.retrieveLongTasks",
-//        query = "FROM Task WHERE duration>10"
-//),
-//@NamedNativeQuery(
-//        name = "Employee.retrieveLastname",
-//        query = "FROM EMPLOYEES WHERE lastname==:LASTNAME ",
-//        resultClass = Employee.class
-//)
+
 @NamedQuery(
         name="Employee.retrieveLastname",
         query ="FROM Employee WHERE lastname=:LASTNAME"

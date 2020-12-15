@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
@@ -17,12 +19,12 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 class CompanyDaoTestSuite {
 
     @Autowired
-     CompanyDao companyDao;
+    CompanyDao companyDao;
     @Autowired
     EmployeeDao employeeDao;
 
-    String LASTNAME="Smith";
-    String PREFIX="Sof";
+    String LASTNAME = "Smith";
+    String PREFIX = "Sof";
 
     @Test
     void testSaveManyToMany() {
@@ -104,13 +106,13 @@ class CompanyDaoTestSuite {
         companyDao.save(dataMaesters);
         companyDao.save(greyMatter);
 
-        int id=softwareMachine.getId();
+        int id = softwareMachine.getId();
 
         List<Company> prefixCompanySof = companyDao.retrieveNameWhichThreeLettersEquals(PREFIX);
 
         //The
-        assertEquals("Sof", prefixCompanySof.size());
-        assertEquals("Sof", prefixCompanySof.get(0).getName());
+        //assertEquals("Sof", prefixCompanySof.size());
+        assertEquals("Software Machine", prefixCompanySof.get(0).getName());
 
         //CleanUp
         companyDao.deleteById(softwareMachine.getId());
