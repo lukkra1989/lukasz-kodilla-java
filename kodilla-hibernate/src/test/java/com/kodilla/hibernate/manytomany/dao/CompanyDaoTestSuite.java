@@ -93,22 +93,14 @@ class CompanyDaoTestSuite {
         employeeDao.delete(johnSmith);
     }
 
-
     @Test
     void testRetrievingCompanyNames() {
         //Given
         Company softwareMachine = new Company("Software Machine");
-        Company dataMaesters = new Company("Data Maesters");
-        Company greyMatter = new Company("Grey Matter");
 
         //When
         companyDao.save(softwareMachine);
-        companyDao.save(dataMaesters);
-        companyDao.save(greyMatter);
-
-        int id = softwareMachine.getId();
-
-        List<Company> prefixCompanySof = companyDao.retrieveNameWhichThreeLettersEquals(PREFIX);
+        List<Company> prefixCompanySof=companyDao.retrieveNameWhichThreeLettersEquals(PREFIX);
 
         //The
         //assertEquals("Sof", prefixCompanySof.size());
@@ -116,7 +108,5 @@ class CompanyDaoTestSuite {
 
         //CleanUp
         companyDao.deleteById(softwareMachine.getId());
-        companyDao.deleteById(dataMaesters.getId());
-        companyDao.deleteById(greyMatter.getId());
     }
 }
