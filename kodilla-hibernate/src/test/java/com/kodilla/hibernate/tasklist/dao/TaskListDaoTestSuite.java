@@ -24,8 +24,8 @@ public class TaskListDaoTestSuite {
     @Autowired
     private TaskDao taskDao;
 
-    private String LISTNAME="Listname";
-    private String TODO="ToDo";
+    private String LISTNAME = "Listname";
+    private String TODO = "ToDo";
 
 //    @Test
 //    void testFindByListName() {
