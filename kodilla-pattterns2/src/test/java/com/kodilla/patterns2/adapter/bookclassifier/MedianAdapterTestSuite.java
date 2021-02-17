@@ -13,24 +13,38 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.IntStream;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class MedianAdapterTestSuite {
-
-    @Before
-    public void  before(){
-
-        Set<BookA> bookA=new HashSet<>();
-        IntStream.iterate(1,n->n+1).limit(5).forEach(n->bookSetA.add(new BookA("Author1"+n, "Title"+n, 1990+2*n,"XYZ"+n/2)));
-    }
 
 
     @Test
-    public void publicationYearMedianTest(){}
-    //Given
-    MedianAdapter adapter=new MedianAdapter();
+    public void publicationYearMedianTest(){
 
-    //When
-    int median = adapter.publicationYearMedian(bookA);
+        //Given
+        MedianAdapter medianAdapter = new MedianAdapter();
 
-    //Then
-    Assert.assertEquals(1999,median);
+        BookA bookA1=new BookA("Author1","Title 1", 1980,"123456");
+        BookA bookA2=new BookA("Author2","Title 2", 1932,"CFH*90");
+        BookA bookA3=new BookA("Author3","Title 3", 2017,"1JKL*&89");
+        BookA bookA4=new BookA("Author4","Title 4", 2001,"109--PX");
+
+        Set<BookA>bookASet=new HashSet<>();
+        bookASet.add(bookA1);
+        bookASet.add(bookA2);
+        bookASet.add(bookA3);
+        bookASet.add(bookA4);
+
+        //When
+        int median = medianAdapter.publicationYearMedian(bookASet);
+
+        //Then
+        assertEquals(2001,median);
+    }
+
+
+
+
+
+
 }
