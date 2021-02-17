@@ -8,6 +8,9 @@ import com.kodilla.hibernate.manytomany.dao.EmployeeDao;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.repository.query.Param;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
@@ -25,29 +28,13 @@ class FacadeTestSuite {
 
     @Test
     public void facadeCompanySearchingTest() {
+        //Given
+
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarkson = new Employee("Stephanie", "Clarkson");
         Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
 
-        Company softwareMachine = new Company("SoftWare Machine");
-        Company dataMaesters = new Company("Data Maesters");
-        Company greyMatter = new Company("Grey Matter");
-
-        softwareMachine.getEmployees().add(johnSmith);
-        dataMaesters.getEmployees().add(stephanieClarkson);
-        dataMaesters.getEmployees().add(lindaKovalsky);
-        greyMatter.getEmployees().add(johnSmith);
-        greyMatter.getEmployees().add(lindaKovalsky);
-
-        johnSmith.getCompanies().add(softwareMachine);
-        johnSmith.getCompanies().add(greyMatter);
-        stephanieClarkson.getCompanies().add(dataMaesters);
-        lindaKovalsky.getCompanies().add(dataMaesters);
-        lindaKovalsky.getCompanies().add(greyMatter);
-
-        companyDao.save(softwareMachine);
-        String softwareMachineName=softwareMachine.getName();
-
-        //assertEquals(softwareMachine,);
+       //When
+        List<Employee>result = facade.findEmpByString(employeeDao.retrieveLastname("Employee.findByPartOfName"));
     }
 }
