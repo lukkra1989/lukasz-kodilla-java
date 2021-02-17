@@ -1,6 +1,6 @@
 package com.kodilla.good.patterns.challenges.soliddry;
 
-public class  Application {
+public class Application {
 
     public static void main(String[] args) {
 

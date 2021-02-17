@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class MovieStore {
 
-    public Map<String , List<String>>getMovies(){
+    public Map<String, List<String>> getMovies() {
 
         List<String> ironManTranslationns = new ArrayList<>();
         ironManTranslationns.add("Żelazny Człowiek");
@@ -18,11 +18,11 @@ public class MovieStore {
         avengersTranslations.add("Avengers");
 
 
-        List<String>flashTranslations =new ArrayList<>();
+        List<String> flashTranslations = new ArrayList<>();
         flashTranslations.add("Błyskawica");
         flashTranslations.add("Flash");
 
-        Map<String,List<String>>booksTitlesWithTranslations = new HashMap<>();
+        Map<String, List<String>> booksTitlesWithTranslations = new HashMap<>();
         booksTitlesWithTranslations.put("IM", ironManTranslationns);
         booksTitlesWithTranslations.put("AV", avengersTranslations);
         booksTitlesWithTranslations.put("FL", flashTranslations);

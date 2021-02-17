@@ -32,18 +32,18 @@ public class FlightFinder {
     }
 
     public String flightVia(String transitAirport) {
-        StringJoiner stringJoiner=new StringJoiner(",");
-            for(Flight flightArrival :flights){
-                for(Flight flightDeparture:flights){
-                    if(!flightArrival.equals(flightDeparture)){
-                        if(flightArrival.getArrivalAirport().equals(transitAirport)&&
-                                flightDeparture.getDepartureAirport().equals(transitAirport))
-                       stringJoiner.add("Flight from: "+flightArrival.getDepartureAirport()  + " via " +
-                                transitAirport + " to: "+ flightDeparture.getArrivalAirport());
+        StringJoiner stringJoiner = new StringJoiner(",");
+        for (Flight flightArrival : flights) {
+            for (Flight flightDeparture : flights) {
+                if (!flightArrival.equals(flightDeparture)) {
+                    if (flightArrival.getArrivalAirport().equals(transitAirport) &&
+                            flightDeparture.getDepartureAirport().equals(transitAirport))
+                        stringJoiner.add("Flight from: " + flightArrival.getDepartureAirport() + " via " +
+                                transitAirport + " to: " + flightDeparture.getArrivalAirport());
 
-                    }
                 }
             }
+        }
 
 //        String transit = flights.stream()
 //                .filter(entry -> entry.getDepartureAirport().equals(transitAirport))

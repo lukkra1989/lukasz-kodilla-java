@@ -15,11 +15,11 @@ public class ShapeCollectorTestSuite {
     public void addFigure_returnsTrueWhenAdded() {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
-        Circle circle=new Circle(0);
+        Circle circle = new Circle(0);
         //When
         //Then
         Shape result = shapeCollector.addFigure(circle);
-        assertEquals(result,circle);
+        assertEquals(result, circle);
     }
 
     @DisplayName("Checking do method contains proper lenght" +

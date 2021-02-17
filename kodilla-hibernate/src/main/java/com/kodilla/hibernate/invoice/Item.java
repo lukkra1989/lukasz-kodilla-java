@@ -1,6 +1,7 @@
 package com.kodilla.hibernate.invoice;
 
 import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
@@ -50,7 +51,7 @@ public class Item {
     @ManyToOne
     @JoinColumn(name = "PRODUCT_ID")
     public Product getProduct() {
-        return  product;
+        return product;
     }
 
     @ManyToOne(cascade = CascadeType.ALL)

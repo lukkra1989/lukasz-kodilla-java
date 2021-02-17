@@ -13,6 +13,6 @@ Application {
         orderService.orderFromShop("GlutenFreeShop", Arrays.asList(new Product("Milk", 2, 12)));
         orderService.orderFromShop("HealthyShop", Arrays.asList(new Product("Orange", 12, 4)));
 
-       // orderService.orderFromShop("SomeOtherShop", Arrays.asList(new Product("Chocolate", 5, 10)));
+        // orderService.orderFromShop("SomeOtherShop", Arrays.asList(new Product("Chocolate", 5, 10)));
     }
 }

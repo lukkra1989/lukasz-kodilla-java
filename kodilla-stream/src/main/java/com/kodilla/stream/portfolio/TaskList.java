@@ -6,17 +6,18 @@ import java.util.Objects;
 
 public final class TaskList {
 
-   private final List<Task> tasks=new LinkedList<>();
-   private final String name;
+    private final List<Task> tasks = new LinkedList<>();
+    private final String name;
 
     public TaskList(String name) {
         this.name = name;
     }
 
-    public void addTask(Task task){
+    public void addTask(Task task) {
         tasks.add(task);
     }
-    public boolean removeTask(Task task){
+
+    public boolean removeTask(Task task) {
         return tasks.remove(task);
     }
 
@@ -24,7 +25,7 @@ public final class TaskList {
         return new LinkedList<>(tasks);
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
@@ -35,6 +36,7 @@ public final class TaskList {
                 ", name='" + name + '\'' +
                 '}';
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

@@ -5,7 +5,7 @@ import java.util.List;
 public class HealthyShop implements Producer {
 
     public void process(List<Product> products) {
-        products.forEach(p-> System.out.println("Ordering product: " + p));
+        products.forEach(p -> System.out.println("Ordering product: " + p));
         System.out.println("Ordered from HealthyShop");
     }
 }

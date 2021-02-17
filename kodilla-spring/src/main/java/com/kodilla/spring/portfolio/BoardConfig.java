@@ -11,25 +11,25 @@ import java.util.List;
 public class BoardConfig {
 
 
-    @Bean(name="taskList1")
-    public TaskList getTaskList(){
+    @Bean(name = "taskList1")
+    public TaskList getTaskList() {
         return new TaskList();
     }
 
-    @Bean(name="taskList2")
-    public TaskList getTaskList1(){
+    @Bean(name = "taskList2")
+    public TaskList getTaskList1() {
         return new TaskList();
     }
 
 
-    @Bean(name="taskList3")
-    public TaskList getTaskList2(){
+    @Bean(name = "taskList3")
+    public TaskList getTaskList2() {
         return new TaskList();
     }
 
     @Bean//metoda faktoryzująca/ factory method
-    public Board newTask(@Qualifier("taskList1") TaskList taskList1, @Qualifier("taskList2")TaskList taskList2,
-                         @Qualifier("taskList3")TaskList taskList3){
+    public Board newTask(@Qualifier("taskList1") TaskList taskList1, @Qualifier("taskList2") TaskList taskList2,
+                         @Qualifier("taskList3") TaskList taskList3) {
         return new Board(taskList1, taskList2, taskList3);
     }
 }

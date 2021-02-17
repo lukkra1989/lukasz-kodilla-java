@@ -18,9 +18,9 @@ public class CalculatorTestSuite {
     @Test
     void testCalculations() {
 
-        assertEquals(6.0,calculator.add(3.0,3.0));
-        assertEquals(0.0,calculator.sub(3.0,3.0));
-        assertEquals(9.0,calculator.mul(3.0,3.0));
-        assertEquals(1.0,calculator.div(3.0,3.0));
+        assertEquals(6.0, calculator.add(3.0, 3.0));
+        assertEquals(0.0, calculator.sub(3.0, 3.0));
+        assertEquals(9.0, calculator.mul(3.0, 3.0));
+        assertEquals(1.0, calculator.div(3.0, 3.0));
     }
 }

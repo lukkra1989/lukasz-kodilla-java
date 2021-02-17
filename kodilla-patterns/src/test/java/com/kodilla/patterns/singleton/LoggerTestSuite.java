@@ -8,12 +8,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class LoggerTestSuite {
 
     @Test
-    void shouldGetLastLog(){
-        Logger logger=Logger.getInstance();
+    void shouldGetLastLog() {
+        Logger logger = Logger.getInstance();
         logger.log("Example Text");
 
         String result = logger.getLastLog();
 
-        assertEquals(result,"Example Text");
+        assertEquals(result, "Example Text");
     }
 }

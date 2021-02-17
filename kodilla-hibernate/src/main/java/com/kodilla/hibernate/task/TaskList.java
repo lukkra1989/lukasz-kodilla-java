@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="TASKLISTS")
+@Table(name = "TASKLISTS")
 public class TaskList {
 
     private int id;
@@ -26,13 +26,13 @@ public class TaskList {
     @Id
     @NotNull
     @GeneratedValue
-    @Column(name="ID", unique=true)
+    @Column(name = "ID", unique = true)
     public int getId() {
         return id;
     }
 
     @NotNull
-    @Column(name="LISTNAME")
+    @Column(name = "LISTNAME")
     public String getListName() {
         return listName;
     }

@@ -18,41 +18,42 @@ public class WorldTestSuite {
         List<World> country = new ArrayList<>();
 
 
-        Country country1 = new Country("Poland", new BigDecimal("3800000000"));
-        Country country2 = new Country("Germany", new BigDecimal("5600000"));
-        Country country3 = new Country("Spain", new BigDecimal("4200000"));
+        Country poland = new Country("Poland", new BigDecimal("3800000000"));
+        Country germany = new Country("Germany", new BigDecimal("5600000"));
+        Country spain = new Country("Spain", new BigDecimal("4200000"));
 
-        Country country4 = new Country("China", new BigDecimal("20000000"));
-        Country country5 = new Country("India", new BigDecimal("670000000"));
-        Country country6 = new Country("Thailand", new BigDecimal("12348888"));
+        Country china = new Country("China", new BigDecimal("20000000"));
+        Country india = new Country("India", new BigDecimal("670000000"));
+        Country thailand = new Country("Thailand", new BigDecimal("12348888"));
 
-        Country country7 = new Country("Usa", new BigDecimal("5300000"));
-        Country country8 = new Country("Canada", new BigDecimal("6700000"));
-        Country country9 = new Country("Mexico", new BigDecimal("90000"));
+        Country usa = new Country("Usa", new BigDecimal("5300000"));
+        Country canada = new Country("Canada", new BigDecimal("6700000"));
+        Country mexico = new Country("Mexico", new BigDecimal("90000"));
 
-        List<Country> countries = new LinkedList<>();
-        countries.add(country1);
-        countries.add(country2);
-        countries.add(country3);
+        List<Country> countriesOfEurope = new LinkedList<>();
+        countriesOfEurope.add(poland);
+        countriesOfEurope.add(germany);
+        countriesOfEurope.add(spain);
 
-        List<Country> countries2 = new LinkedList<>();
-        countries2.add(country4);
-        countries2.add(country5);
-        countries2.add(country6);
+        List<Country> countriesOfAsia = new LinkedList<>();
+        countriesOfAsia.add(china);
+        countriesOfAsia.add(india);
+        countriesOfAsia.add(thailand);
 
-        List<Country> countries3 = new LinkedList<>();
-        countries3.add(country7);
-        countries3.add(country8);
-        countries3.add(country9);
 
-        Continent continent1 = new Continent(countries, "Europe");
-        Continent continent2 = new Continent(countries, "Asia");
-        Continent continent3 = new Continent(countries, "North America");
+        List<Country> countriesOfNorthAmerica = new LinkedList<>();
+        countriesOfNorthAmerica.add(usa);
+        countriesOfNorthAmerica.add(canada);
+        countriesOfNorthAmerica.add(mexico);
+
+        Continent europe = new Continent(countriesOfEurope, "Europe");
+        Continent asia = new Continent(countriesOfEurope, "Asia");
+        Continent northAmerica = new Continent(countriesOfEurope, "North America");
 
         List<Continent> continents = new LinkedList<>();
-        continents.add(continent1);
-        continents.add(continent2);
-        continents.add(continent3);
+        continents.add(europe);
+        continents.add(asia);
+        continents.add(northAmerica);
 
         World world = new World(continents);
 

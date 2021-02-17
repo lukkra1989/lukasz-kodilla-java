@@ -7,9 +7,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class BigmacTestSuite {
 
     @Test
-    void testBigMacNew(){
+    void testBigMacNew() {
         //Given
-        Bigmac bigmac=new Bigmac.BigmacBuilder()
+        Bigmac bigmac = new Bigmac.BigmacBuilder()
                 .bun("with seasame")
                 .burgers(2)
                 .sauce("standard")
@@ -26,8 +26,8 @@ public class BigmacTestSuite {
                 .build();
         System.out.println(bigmac);
         //When
-        int howManyIngredients=bigmac.getIngredients().size();
+        int howManyIngredients = bigmac.getIngredients().size();
         //Then
-        assertEquals(8,howManyIngredients);
+        assertEquals(8, howManyIngredients);
     }
 }

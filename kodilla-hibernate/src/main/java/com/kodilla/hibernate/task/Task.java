@@ -14,14 +14,14 @@ import java.util.Date;
                 query = "FROM Task WHERE duration<=10"
         ),
         @NamedQuery(
-                name="Task.retrieveTasksWitDurationLongerThan",
+                name = "Task.retrieveTasksWitDurationLongerThan",
                 query = "FROM Task WHERE duration>:DURATION"
         )
 })
 @NamedNativeQuery(
-        name="Task.retrieveTasksWithEnoughTime",
-        query = "SELECT * FROM TASKS"+
-                  " WHERE DATEDIFF(DATE_ADD(CREATED, INTERVAL DURATION DAY), NOW()) > 5",
+        name = "Task.retrieveTasksWithEnoughTime",
+        query = "SELECT * FROM TASKS" +
+                " WHERE DATEDIFF(DATE_ADD(CREATED, INTERVAL DURATION DAY), NOW()) > 5",
         resultClass = Task.class
 )
 @Entity
@@ -58,18 +58,18 @@ public final class Task {
     }
 
     @NotNull
-    @Column(name="CREATED")
+    @Column(name = "CREATED")
     public Date getCreated() {
         return created;
     }
 
-    @Column(name="DURATION")
+    @Column(name = "DURATION")
     public int getDuration() {
         return duration;
     }
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name= "TASKS_FINANCIALS_ID")
+    @JoinColumn(name = "TASKS_FINANCIALS_ID")
     public TaskFinancialDetails getTaskFinancialDetails() {
         return taskFinancialDetails;
     }

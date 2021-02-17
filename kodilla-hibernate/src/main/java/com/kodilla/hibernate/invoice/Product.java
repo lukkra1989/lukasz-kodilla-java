@@ -67,7 +67,6 @@ public class Product {
 }
 
 
-
 //@Entity
 //@Table(name = "PRODUCTS")
 //public class Product {

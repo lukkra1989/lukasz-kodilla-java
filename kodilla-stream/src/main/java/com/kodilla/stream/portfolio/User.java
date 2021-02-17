@@ -30,7 +30,7 @@ public final class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         User user = (User) o;
-        return username.equals( user.username);
+        return username.equals(user.username);
 
     }
 }

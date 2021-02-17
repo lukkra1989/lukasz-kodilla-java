@@ -11,6 +11,13 @@ import java.util.List;
                 "WHERE SUBSTRING(COMPANY_NAME,1,3) = :PREFIX",
         resultClass = Company.class
 )
+
+@NamedNativeQuery(
+        name = "Company.findByPartOfName",
+        //field LIKE :ARG
+        query = "SELECT FROM COMPANIES WHERE COMPANY_NAME LIKE:  ('%PREFIX %')"
+)
+
 @Entity
 @Table(name = "COMPANIES")
 public class Company {

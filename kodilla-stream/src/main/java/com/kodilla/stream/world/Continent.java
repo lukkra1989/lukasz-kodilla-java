@@ -3,13 +3,13 @@ package com.kodilla.stream.world;
 import java.util.LinkedList;
 import java.util.List;
 
-public final class Continent{
+public final class Continent {
 
-    private final List<Country>countries;
+    private final List<Country> countries;
 
     private final String continent;
 
-    public Continent(List<Country> countries,String continent) {
+    public Continent(List<Country> countries, String continent) {
         this.countries = countries;
         this.continent = continent;
     }

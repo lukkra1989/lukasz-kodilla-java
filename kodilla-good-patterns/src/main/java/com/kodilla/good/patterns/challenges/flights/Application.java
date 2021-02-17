@@ -9,7 +9,7 @@ public class Application {
         flightFinder.flightVia("Berlin");
         flightFinder.flightTo("Moscow");
 
-       System.out.println(flightFinder.flightVia("London"));
+        System.out.println(flightFinder.flightVia("London"));
         System.out.println(flightFinder.flightVia("Berlin"));
     }
 }

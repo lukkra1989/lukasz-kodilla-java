@@ -2,13 +2,13 @@ package com.kodilla.patterns.singleton;
 
 public class Logger {
 
-    private static final Logger INSTANCE=new Logger();
+    private static final Logger INSTANCE = new Logger();
     private String lastLog = "";
 
     private Logger() {
     }
 
-    public static Logger getInstance(){
+    public static Logger getInstance() {
         return INSTANCE;
     }
 

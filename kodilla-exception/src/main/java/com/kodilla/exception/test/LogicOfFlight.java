@@ -11,7 +11,7 @@ public class LogicOfFlight {
         fly.put("Berlin", false);
         fly.put("London", true);
 
-        if(!fly.containsKey(flight.getArrivalAirport())){
+        if (!fly.containsKey(flight.getArrivalAirport())) {
             throw new RouteNotFoundException();
         }
     }

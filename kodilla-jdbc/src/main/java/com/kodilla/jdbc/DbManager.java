@@ -9,20 +9,22 @@ public class DbManager {
     private Connection conn;
     private static DbManager dbManagerInstance;
 
-    private DbManager()throws SQLException{
-        Properties connectionProps= new Properties();
-        connectionProps.put("user","kodilla_user");
-        connectionProps.put("password","kodilla_password");
+    private DbManager() throws SQLException {
+        Properties connectionProps = new Properties();
+        connectionProps.put("user", "kodilla_user");
+        connectionProps.put("password", "kodilla_password");
         conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/kodilla_course?serverTimezone=" +
-                "Europe/Warsaw"  + "&useSSL=False", connectionProps);
+                "Europe/Warsaw" + "&useSSL=False", connectionProps);
     }
 
-    public  static DbManager getInstance()throws SQLException{
-        if(dbManagerInstance==null){
-            dbManagerInstance=new DbManager();
-        }return dbManagerInstance;
+    public static DbManager getInstance() throws SQLException {
+        if (dbManagerInstance == null) {
+            dbManagerInstance = new DbManager();
+        }
+        return dbManagerInstance;
     }
-    public Connection getConnection(){
+
+    public Connection getConnection() {
         return conn;
     }
 }
