@@ -1,7 +1,7 @@
 package com.kodilla.hibernate.manytomany;
 
-import com.sun.istack.NotNull;
-
+//import com.sun.istack.NotNull;
+import javax.validation.constraints.NotNull;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +12,7 @@ import java.util.List;
 )
 @NamedQuery(
         name="Employee.findByPartOfName",
-        query = "FROM Employee WHERE lastname  LIKE CONCAT(\'%\',:LASTNAME,\'%\') "
-
+        query = "FROM Employee WHERE firstname LIKE CONCAT('%', :ANYLETTERS, '%') OR lastname LIKE CONCAT('%', :ANYLETTERS, '%')"
 )
 @Entity
 @Table(name = "EMPLOYEES")

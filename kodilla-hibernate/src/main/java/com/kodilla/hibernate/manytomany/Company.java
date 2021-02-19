@@ -14,8 +14,7 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Company.findByPartOfName",
-        //field LIKE :ARG
-        query = "SELECT FROM COMPANIES WHERE COMPANY_NAME LIKE:  ('%PREFIX %')"
+        query = "SELECT FROM COMPANIES WHERE COMPANY_NAME = :PREFIX)"
 )
 
 @Entity
