@@ -62,8 +62,8 @@ public class RpsGame {
         Scanner scanner = new Scanner(System.in);
         do {
             quitGame = scanner.next();
-        } while ((!quitGame.equals("T")) && (!(quitGame.equals("N"))));
-        return (quitGame.equals("T"));
+        } while ((!quitGame.equals("Y")) && (!(quitGame.equals("N"))));
+        return (quitGame.equals("Y"));
     }
 
     public boolean exitToMenu() {
