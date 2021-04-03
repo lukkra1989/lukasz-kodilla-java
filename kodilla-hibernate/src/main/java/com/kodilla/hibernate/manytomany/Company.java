@@ -14,7 +14,7 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Company.findByPartOfName",
-        query = "SELECT FROM COMPANIES WHERE COMPANY_NAME = :PREFIX)"
+        query = "SELECT FROM COMPANIES WHERE COMPANY_NAME, = :PREFIX)"
 )
 
 @Entity

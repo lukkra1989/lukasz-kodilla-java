@@ -27,21 +27,21 @@ public class TaskListDaoTestSuite {
     private String LISTNAME = "Listname";
     private String TODO = "ToDo";
 
-//    @Test
-//    void testFindByListName() {
-//        //Given
-//        TaskList taskList = new TaskList("name", "name");
-//        taskListDao.save(taskList);
-//        String name = taskList.getListName();
-//        //When
-//        List<TaskList> findTask = taskListDao.findByListName(name);
-//
-//        //Then
-//        assertEquals(findTask.size(), 1);
-//
-//        //CleanUp
-//        taskListDao.deleteById(taskList.getId());
-//    }
+    @Test
+    void testFindByListName() {
+        //Given
+        TaskList taskList = new TaskList("name", "name");
+        taskListDao.save(taskList);
+        String name = taskList.getListName();
+        //When
+        List<TaskList> findTask = taskListDao.findByListName(name);
+
+        //Then
+        assertEquals(findTask.size(), 1);
+
+        //CleanUp
+        taskListDao.deleteById(taskList.getId());
+    }
 
     @Test
     void testTaskListDaoSaveWithTasks() {
@@ -66,6 +66,6 @@ public class TaskListDaoTestSuite {
         assertNotEquals(0, id);
 
         //CleanUp
-        //taskListDao.deleteById(id);
+        taskListDao.deleteById(id);
     }
 }
