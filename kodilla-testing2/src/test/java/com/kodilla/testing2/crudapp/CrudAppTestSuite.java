@@ -19,7 +19,6 @@ public class CrudAppTestSuite {
     private WebDriver driver;
     private Random generator;
 
-
     @Before
     public void initTests() {
         driver = WebDriverConfig.getDriver(WebDriverConfig.CHROME);
