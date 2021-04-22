@@ -13,7 +13,6 @@ import java.util.Random;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-
 public class CrudAppTestSuite {
     private static final String BASE_URL = "https://lukkra1989.github.io/";
     private WebDriver driver;
