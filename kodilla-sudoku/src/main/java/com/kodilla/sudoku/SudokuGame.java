@@ -6,7 +6,6 @@ import com.kodilla.sudoku.game.GameResults;
 import com.kodilla.sudoku.game.GameRunner;
 
 public class SudokuGame {
-
     GameApproval approval = new GameApproval();
     GameRunner runner = new GameRunner();
     GameResults results = new GameResults();

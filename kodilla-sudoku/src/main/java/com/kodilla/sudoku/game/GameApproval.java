@@ -18,8 +18,8 @@ public class GameApproval {
         do {
             board = sudokuBoardBuilder.build(dataInput.inputData());
             System.out.println("\nActual Sudoku: \n" + board + "\n");
-            System.out.println("To enter data again press: 'ENTER'.\n"
-                    + "To approve Sudoku, type 'SUDOKU' and press ENTER\n");
+            System.out.println("TO TYPE AGAIN: 'ENTER'.\n"
+                    + "To approve type 'SUDOKU' and press ENTER\n");
             choice = scanner.nextLine();
 
         } while (!choice.equals("SUDOKU") && !choice.equals("sudoku") && !choice.equals("Sudoku"));

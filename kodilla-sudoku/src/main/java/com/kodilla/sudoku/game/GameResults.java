@@ -11,15 +11,15 @@ public class GameResults {
         Deque<SudokuBoard> result = boardStack.getBoardStack();
 
         if (result.size() == 1001) {
-            System.out.println("Number of results is bigger than 1000.");
+            System.out.println("MORE THAN 1000 RESULTS.");
         } else {
-            System.out.println("Number of possible results is: " + result.size());
+            System.out.println("NUMBER OF RESULTS : " + result.size());
         }
 
         if (result.size() > 1) {
-            System.out.println("One of possible answers:\n" + result.pop() + "\n");
+            System.out.println("ONE OF ANSWER :\n" + result.pop() + "\n");
         } else {
-            System.out.println("Answer:\n" + result.pop() + "\n");
+            System.out.println("ANSWER\n" + result.pop() + "\n");
         }
     }
 }

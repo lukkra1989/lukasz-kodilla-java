@@ -1,11 +1,13 @@
 package com.kodilla.sudoku.data;
 
+import jdk.jfr.DataAmount;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import static com.kodilla.sudoku.logic.SudokuSolver.EMPTY;
-
+@DataAmount
 public class SudokuElement {
 
     private int number;

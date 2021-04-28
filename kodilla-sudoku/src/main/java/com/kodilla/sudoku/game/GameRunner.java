@@ -48,7 +48,7 @@ public class GameRunner {
                 } while (tempBoardStack.getBoardStack().size() > 0);
             }
         } else {
-            System.out.println("There is no correct solution.\n");
+            System.out.println("THERE IS NO SOLUTION ! .\n");
         }
 
         return solvedStack;

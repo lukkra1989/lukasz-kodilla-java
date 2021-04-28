@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SudokuRow {
+
     private final static int MAX_INDEX = 9;
     private final static int MIN_INDEX = 0;
     List<SudokuElement> row = new ArrayList<>();
