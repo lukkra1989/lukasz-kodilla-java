@@ -20,7 +20,7 @@ public class InputValidator {
     }
 
     public boolean validateIfCorrectRange() {
-        String correctRange = "123456789";
+        String correctRange = "123" + " " + "456" + " " + "789";
         for (int i = 0; i < input.length(); i++) {
             if (!correctRange.contains(Character.toString(input.charAt(i)))) {
                 System.out.println("Invalid entry. All characters should be between 1 and 9\n");
