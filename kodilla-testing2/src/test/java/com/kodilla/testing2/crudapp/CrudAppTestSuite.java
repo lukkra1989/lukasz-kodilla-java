@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.Random;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CrudAppTestSuite {
@@ -20,7 +21,7 @@ public class CrudAppTestSuite {
 
     @Before
     public void initTests() {
-        driver = WebDriverConfig.getDriver(WebDriverConfig.CHROME);
+        driver = WebDriverConfig.getDriver(WebDriverConfig.FIREFOX);
         driver.get(BASE_URL);
         generator = new Random();
         generator.nextBoolean();
@@ -79,14 +80,14 @@ public class CrudAppTestSuite {
         WebDriver driverTrello = WebDriverConfig.getDriver(WebDriverConfig.FIREFOX);
         driverTrello.get(TRELLO_URL);
 
-        driverTrello.findElement(By.id("user")).sendKeys("Łukasz Kramarczyk");
+        driverTrello.findElement(By.id("user")).sendKeys("luk.kramarczyk@gmail.com");
         driverTrello.findElement(By.id("password")).sendKeys("123Kodzimy!");
         WebElement el = driverTrello.findElement(By.id("login"));
         el.submit();
 
         Thread.sleep(4000);
 
-        driverTrello.findElement(By.id("passworrd")).sendKeys("123Kodzimy!");
+        driverTrello.findElement(By.id("password")).sendKeys("123Kodzimy!");
         driverTrello.findElement(By.id("login-submit")).submit();
 
         Thread.sleep(4000);
@@ -128,5 +129,7 @@ public class CrudAppTestSuite {
         sendTestTaskToTrello(taskName);
         assertTrue(checkTaskExistsInTrello(taskName));
         cleanTheApp(taskName);
+        assertFalse(checkTaskExistsInTrello(taskName));
+
     }
 }
