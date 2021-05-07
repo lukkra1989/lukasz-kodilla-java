@@ -129,7 +129,7 @@ public class CrudAppTestSuite {
         sendTestTaskToTrello(taskName);
         assertTrue(checkTaskExistsInTrello(taskName));
         cleanTheApp(taskName);
-        //assertFalse(checkTaskExistsInTrello(taskName));
+        assertFalse(checkTaskExistsInTrello(taskName));
 
     }
 }
