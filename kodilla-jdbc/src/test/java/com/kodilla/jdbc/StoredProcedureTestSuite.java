@@ -47,10 +47,11 @@ public class StoredProcedureTestSuite {
         //Then
         String sqlCheckTable = "SELECT COUNT(*) AS HOW_MANY FROM BOOKS WHERE BESTSELLER=1";
         ResultSet rs = statement.executeQuery(sqlCheckTable);
-        int howMany = 2;
+        int howMany = -1;
         if (rs.next()) {
             howMany = rs.getInt("HOW_MANY");
         }
-        assertEquals(2, howMany);
+        assertEquals(2
+                , howMany);
     }
 }
