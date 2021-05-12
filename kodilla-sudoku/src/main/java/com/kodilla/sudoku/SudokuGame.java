@@ -1,19 +1,26 @@
-//package com.kodilla.sudoku;
-//
-//public class SudokuGame {
-//
-//   SudokuElement sudokuElement=new SudokuElement(4);
-//
-//
-//    public boolean resolveSudoku() {
-//        return false;
-//    }
-//
-//    public static void main(String[] args) {
-//        boolean gameFinished = false;
-//        while (!gameFinished) {
-//            SudokuGame theGame = new SudokuGame();
-//            gameFinished = theGame.resolveSudoku();
-//        }
-//    }
-//}
+package com.kodilla.sudoku;
+
+import com.kodilla.sudoku.game.GameApproval;
+import com.kodilla.sudoku.game.GameFinish;
+import com.kodilla.sudoku.game.GameResults;
+import com.kodilla.sudoku.game.GameRunner;
+
+public class SudokuGame {
+    GameApproval approval = new GameApproval();
+    GameRunner runner = new GameRunner();
+    GameResults results = new GameResults();
+    GameFinish finish = new GameFinish();
+
+    public static void main(String[] args) {
+        SudokuGame sudokuGame = new SudokuGame();
+        sudokuGame.sudokuRunner();
+    }
+
+    public void sudokuRunner() {
+        boolean gameFinished = false;
+        while (!gameFinished) {
+            results.showResults(runner.run(approval.choose()));
+            gameFinished = finish.finishGame();
+        }
+    }
+}
